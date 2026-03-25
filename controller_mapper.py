@@ -72,6 +72,7 @@ haptic_enabled = True
 global_mouse_speed = 15.0
 global_scroll_speed = 0.2
 hud_dictionary = {"Default HUD": list(DEFAULT_HUD_ITEMS)}
+global_enabled = True # Master toggle for mapping
 
 def load_config():
     global profiles, haptic_enabled, global_mouse_speed, global_scroll_speed, hud_dictionary
@@ -138,7 +139,7 @@ def window_monitor_loop():
         time.sleep(1.0) # Check active window every second
 
 def execute_action(action, state="down"):
-    if not action:
+    if not action or not global_enabled:
         return
         
     action_type = action.get("type", "")
@@ -216,6 +217,8 @@ def execute_action(action, state="down"):
 last_trigger_time = 0
 
 def process_continuous_input(joystick, profile):
+    if not global_enabled:
+        return
     global last_trigger_time
     current_time = time.time()
     
@@ -334,6 +337,14 @@ class ControllerThread(QThread):
             self.active_joystick_id = instance_id
             print(f"Manually switched active controller to ID {instance_id}")
 
+    def set_enabled(self, enabled):
+        global global_enabled
+        global_enabled = enabled
+        if not enabled:
+            print("Mapping DISABLED globally.")
+        else:
+            print("Mapping ENABLED globally.")
+
     def emit_controllers(self):
         controller_list = [{"id": j.get_instance_id(), "name": j.get_name()} for j in self.joysticks.values()]
         self.controllers_changed.emit(controller_list, self.active_joystick_id if self.active_joystick_id is not None else -1)
@@ -418,6 +429,9 @@ class ControllerThread(QThread):
                             self.emit_controllers()
                             
                     if hasattr(event, 'instance_id') and event.instance_id != self.active_joystick_id:
+                        continue
+                        
+                    if not global_enabled and event.type in (pygame.JOYBUTTONDOWN, pygame.JOYBUTTONUP, pygame.JOYHATMOTION, pygame.JOYAXISMOTION):
                         continue
 
                     profile = profiles.get(active_profile_name, {})

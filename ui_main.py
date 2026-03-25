@@ -331,6 +331,7 @@ class ConfigUI(QMainWindow):
 
     def init_ui(self):
         self.setStyleSheet(DARK_THEME_QSS)
+        self.setWindowIcon(QIcon("app_icon.png"))
         
         main_widget = QWidget()
         self.setCentralWidget(main_widget)
@@ -628,12 +629,15 @@ class ConfigUI(QMainWindow):
 
     def init_tray(self):
         self.tray_icon = QSystemTrayIcon(self)
-        # Using a default icon for now, should be replaced with a real icon
-        self.tray_icon.setIcon(self.style().standardIcon(self.style().SP_ComputerIcon))
+        self.tray_icon.setIcon(QIcon("app_icon.png"))
         
         tray_menu = QMenu()
         show_action = QAction("Show Settings", self)
         show_action.triggered.connect(self.show)
+        
+        self.enable_action = QAction("✅ Enable Mapping", self, checkable=True)
+        self.enable_action.setChecked(True)
+        self.enable_action.triggered.connect(self.toggle_mapping)
         
         restart_action = QAction("Restart App", self)
         restart_action.triggered.connect(self.restart_app)
@@ -646,12 +650,18 @@ class ConfigUI(QMainWindow):
         quit_action.triggered.connect(QApplication.instance().quit)
         
         tray_menu.addAction(show_action)
+        tray_menu.addAction(self.enable_action)
         tray_menu.addAction(restart_action)
         tray_menu.addAction(autostart_action)
         tray_menu.addAction(quit_action)
         
         self.tray_icon.setContextMenu(tray_menu)
         self.tray_icon.show()
+
+    def toggle_mapping(self, checked):
+        if hasattr(self, 'controller_thread') and self.controller_thread:
+            self.controller_thread.set_enabled(checked)
+            self.enable_action.setText("✅ Enable Mapping" if checked else "❌ Enable Mapping (Disabled)")
 
     def check_autostart(self):
         try:

@@ -13,6 +13,7 @@
 
 ### ✨ Key Features
 
+- **Global Enable/Disable Toggle**: Instantly pause the mapper from the system tray when playing native controller games to avoid double-inputs.
 - **Dynamic App Binding**: Automatically switch profiles when you change applications (e.g., specific layouts for Chrome vs. Photoshop).
 - **Multi-Radial HUD Menus**: Stunning circular overlay menus supporting up to 8 quick actions each. Create unlimited custom HUDs (Media HUD, App HUD, etc.).
 - **Powerful Macros**: Supports complex hotkey combinations (`ctrl+shift+s`) or sequential text typing (`h,e,l,l,o`).
@@ -52,6 +53,7 @@ If this tool improves your workflow, consider buying me a coffee! Your support h
 
 ### ✨ Tính Năng Nổi Bật
 
+- **Global Enable/Disable Toggle**: Bật/Tắt nhanh toàn bộ mapper từ khay hệ thống khi chơi các game đã hỗ trợ tay cầm mặc định, tránh xung đột phím.
 - **Dynamic App Binding**: Tự động chuyển đổi Profile điều khiển khi bạn chuyển đổi giữa các ứng dụng (vd: Vào Chrome dùng cụm nút khác, vào Photoshop dùng cụm nút khác).
 - **Multi-Radial HUD Menus**: Menu vòng tròn (Radial Menu) cực đẹp, cho phép bạn gán tới 8 hành động nhanh cho mỗi menu. Bạn có thể tạo hàng chục menu khác nhau (Media HUD, App HUD, v.v.).
 - **Powerful Macros**: Hỗ trợ nhấn tổ hợp phím phức tạp (`ctrl+shift+s`) hoặc gõ một chuỗi ký tự liên tục (`h,e,l,l,o`).
