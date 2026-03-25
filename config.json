@@ -1,0 +1,334 @@
+{
+    "profiles": {
+        "Default": {
+            "buttons": {},
+            "triggers": {},
+            "axes": {
+                "RightX": {
+                    "type": "mouse_x"
+                },
+                "RightY": {
+                    "type": "mouse_y"
+                },
+                "LeftX": {
+                    "type": "scroll_horizontal"
+                },
+                "LeftY": {
+                    "type": "scroll_vertical"
+                }
+            }
+        },
+        "Lightroom": {
+            "buttons": {
+                "A": {
+                    "type": "macro",
+                    "key": "ctrl+z"
+                },
+                "B": {
+                    "type": "key_press",
+                    "key": "esc"
+                },
+                "LB": {
+                    "type": "key_tap",
+                    "key": ","
+                },
+                "RB": {
+                    "type": "key_tap",
+                    "key": "."
+                },
+                "Down": {
+                    "type": "key_press",
+                    "key": "alt"
+                },
+                "Up": {
+                    "type": "key_press",
+                    "key": "shift"
+                },
+                "Y": {
+                    "type": "key_press",
+                    "key": "mouse_left"
+                },
+                "X": {
+                    "type": "key_press",
+                    "key": "mouse_right"
+                }
+            },
+            "triggers": {
+                "LT": {
+                    "type": "key_tap",
+                    "key": "-"
+                },
+                "RT": {
+                    "type": "key_tap",
+                    "key": "+"
+                }
+            },
+            "axes": {
+                "LeftY": {
+                    "type": "scroll_vertical"
+                },
+                "LeftX": {
+                    "type": "scroll_horizontal"
+                },
+                "RightX": {
+                    "type": "mouse_x"
+                },
+                "RightY": {
+                    "type": "mouse_y"
+                }
+            },
+            "process_name": "Lightroom.exe"
+        },
+        "Chrome": {
+            "buttons": {
+                "Y": {
+                    "type": "key_press",
+                    "key": "mouse_left"
+                },
+                "X": {
+                    "type": "key_press",
+                    "key": "mouse_right"
+                }
+            },
+            "triggers": {},
+            "axes": {
+                "RightX": {
+                    "type": "mouse_x"
+                },
+                "RightY": {
+                    "type": "mouse_y"
+                },
+                "LeftX": {
+                    "type": "scroll_horizontal"
+                },
+                "LeftY": {
+                    "type": "scroll_vertical"
+                }
+            },
+            "process_name": "msedge.exe"
+        },
+        "Global": {
+            "buttons": {
+                "LS": {
+                    "type": "radial_menu"
+                }
+            },
+            "triggers": {},
+            "axes": {
+                "RightX": {
+                    "type": "mouse_x"
+                },
+                "RightY": {
+                    "type": "mouse_y"
+                },
+                "LeftX": {
+                    "type": "scroll_horizontal"
+                },
+                "LeftY": {
+                    "type": "scroll_vertical"
+                }
+            }
+        }
+    },
+    "haptic_enabled": false,
+    "mouse_speed": 20.0,
+    "scroll_speed": 0.2,
+    "huds": {
+        "Default HUD": [
+            {
+                "label": "Next Track",
+                "icon": "⏭️",
+                "hold_execute": true,
+                "hold_delay_s": 0.5,
+                "hold_repeat": false,
+                "hold_repeat_s": 0.2,
+                "action": {
+                    "type": "key_press",
+                    "key": "next_track"
+                }
+            },
+            {
+                "label": "Calculator",
+                "icon": "🖩",
+                "hold_execute": true,
+                "hold_delay_s": 0.5,
+                "hold_repeat": false,
+                "hold_repeat_s": 0.2,
+                "action": {
+                    "type": "run_app",
+                    "key": "calc.exe"
+                }
+            },
+            {
+                "label": "Vol Down",
+                "icon": "🔉",
+                "hold_execute": true,
+                "hold_delay_s": 0.5,
+                "hold_repeat": true,
+                "hold_repeat_s": 0.1,
+                "action": {
+                    "type": "key_press",
+                    "key": "volume_down"
+                }
+            },
+            {
+                "label": "Notepad",
+                "icon": "📝",
+                "hold_execute": true,
+                "hold_delay_s": 0.5,
+                "hold_repeat": false,
+                "hold_repeat_s": 0.2,
+                "action": {
+                    "type": "run_app",
+                    "key": "notepad.exe"
+                }
+            },
+            {
+                "label": "Prev Track",
+                "icon": "⏮️",
+                "hold_execute": true,
+                "hold_delay_s": 0.5,
+                "hold_repeat": false,
+                "hold_repeat_s": 0.2,
+                "action": {
+                    "type": "key_press",
+                    "key": "prev_track"
+                }
+            },
+            {
+                "label": "Play/Pause",
+                "icon": "⏯️",
+                "hold_execute": true,
+                "hold_delay_s": 0.5,
+                "hold_repeat": false,
+                "hold_repeat_s": 0.2,
+                "action": {
+                    "type": "key_press",
+                    "key": "play_pause"
+                }
+            },
+            {
+                "label": "Vol Up",
+                "icon": "🔊",
+                "hold_execute": true,
+                "hold_delay_s": 0.5,
+                "hold_repeat": true,
+                "hold_repeat_s": 0.1,
+                "action": {
+                    "type": "key_press",
+                    "key": "volume_up"
+                }
+            },
+            {
+                "label": "Mute",
+                "icon": "🔇",
+                "hold_execute": true,
+                "hold_delay_s": 0.5,
+                "hold_repeat": false,
+                "hold_repeat_s": 0.2,
+                "action": {
+                    "type": "key_press",
+                    "key": "volume_mute"
+                }
+            }
+        ],
+        "photoshop": [
+            {
+                "label": "aaaaaaaa",
+                "icon": "⏭️",
+                "hold_execute": false,
+                "hold_delay_s": 0.5,
+                "hold_repeat": false,
+                "hold_repeat_s": 0.2,
+                "action": {
+                    "type": "key_press",
+                    "key": "next_track"
+                }
+            },
+            {
+                "label": "bbbbbbbbbb",
+                "icon": "🧮",
+                "hold_execute": false,
+                "hold_delay_s": 0.5,
+                "hold_repeat": false,
+                "hold_repeat_s": 0.2,
+                "action": {
+                    "type": "run_app",
+                    "key": "calc.exe"
+                }
+            },
+            {
+                "label": "ccccccc",
+                "icon": "🔉",
+                "hold_execute": true,
+                "hold_delay_s": 0.5,
+                "hold_repeat": true,
+                "hold_repeat_s": 0.2,
+                "action": {
+                    "type": "key_press",
+                    "key": "volume_down"
+                }
+            },
+            {
+                "label": "Notepad",
+                "icon": "📝",
+                "hold_execute": false,
+                "hold_delay_s": 0.5,
+                "hold_repeat": false,
+                "hold_repeat_s": 0.2,
+                "action": {
+                    "type": "run_app",
+                    "key": "notepad.exe"
+                }
+            },
+            {
+                "label": "Prev Track",
+                "icon": "⏮️",
+                "hold_execute": false,
+                "hold_delay_s": 0.5,
+                "hold_repeat": false,
+                "hold_repeat_s": 0.2,
+                "action": {
+                    "type": "key_press",
+                    "key": "prev_track"
+                }
+            },
+            {
+                "label": "Play/Pause",
+                "icon": "⏯️",
+                "hold_execute": false,
+                "hold_delay_s": 0.5,
+                "hold_repeat": false,
+                "hold_repeat_s": 0.2,
+                "action": {
+                    "type": "key_press",
+                    "key": "play_pause"
+                }
+            },
+            {
+                "label": "Vol Up",
+                "icon": "🔊",
+                "hold_execute": true,
+                "hold_delay_s": 0.5,
+                "hold_repeat": true,
+                "hold_repeat_s": 0.2,
+                "action": {
+                    "type": "key_press",
+                    "key": "volume_up"
+                }
+            },
+            {
+                "label": "Mute",
+                "icon": "🔇",
+                "hold_execute": false,
+                "hold_delay_s": 0.5,
+                "hold_repeat": false,
+                "hold_repeat_s": 0.2,
+                "action": {
+                    "type": "key_press",
+                    "key": "volume_mute"
+                }
+            }
+        ]
+    }
+}
